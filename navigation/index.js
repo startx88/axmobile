@@ -1,9 +1,16 @@
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import AppTheme from '../theme';
+import { Color } from '../theme/Color';
 import AuthStack from './AuthStack';
 
 // theme
-const AppTheme = {
+const Theme = {
   ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    ...Color
+  },
+  ...AppTheme(DefaultTheme)
 };
 
 
@@ -11,7 +18,7 @@ const AppTheme = {
 // App Navigation
 export default function AppNavigation() {
   return (
-    <NavigationContainer theme={AppTheme}>
+    <NavigationContainer theme={Theme}>
       <AuthStack />
     </NavigationContainer>
   );

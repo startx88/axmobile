@@ -1,9 +1,13 @@
+/**
+ * Colors
+ */
 export const Color = {
-  background: '#f4f5f6',
+  background: '#fff',
   black: '#000',
   white: '#fff',
   text: '#312651',
   gray: '#83829A',
+  secondary: '#cbcbcb',
   grayLight: '#e1e4e8',
   primary: '#2196f3',
   primaryLight: '#4dabf5',
@@ -16,5 +20,6 @@ export const Color = {
   success: '#43a047',
   border: '#83829A',
   borderLight: '#e6e4e6',
+  borderDarken: '#83829A',
   secondary: '#ccc'
 }
