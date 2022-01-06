@@ -40,6 +40,23 @@ const AppTheme = (theme) => {
     avatarMd: { width: 55, height: 55 },
     avatarLg: { width: 85, height: 85 },
     avatarXl: { width: 100, height: 100 },
+    modal: {
+      flex: 1, alignItems: 'center', justifyContent: 'center'
+    },
+    modalContainer: {
+      backgroundColor: 'white',
+      width: width - 20,
+      borderRadius: 5,
+      margin: 'auto',
+      padding: 15,
+      elevation: 5,
+      position: 'relative',
+      zIndex: 2
+    },
+    modalContent: {
+      maxHeight: height * 0.7,
+    },
+    modalTitle: { marginBottom: 15, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomColor: global.colors.border, borderBottomWidth: 1, paddingVertical: 10 },
     ...Typography(global),
     ...themeButton(global)
   })

@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import { StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import { enableFreeze } from 'react-native-screens';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font'
@@ -27,6 +27,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
+      <StatusBar animated={true} />
       <AppNavigation />
     </SafeAreaProvider>
   );
