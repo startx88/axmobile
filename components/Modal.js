@@ -37,7 +37,7 @@ const Modal = forwardRef(({ title, children, ...rest }, ref) => {
               <Icon icon="close" color={theme.colors.primary} />
             </TouchableOpacity>
           </View>
-          <View style={[theme.modalContent, {}]}>
+          <View style={[theme.modalContent]}>
             <ScrollView style={{ height: 300 }}>
               {children}
             </ScrollView>

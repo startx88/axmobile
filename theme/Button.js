@@ -9,7 +9,7 @@ export default function themeButton(theme) {
   return {
     btnGroup: { flexDirection: 'row', width: '100%', alignItems: 'center' },
     btn: {
-      paddingHorizontal: 15,
+      paddingHorizontal: 12,
       paddingVertical: 6,
       borderColor: 'transparent',
       borderStyle: 'solid',
@@ -51,5 +51,10 @@ export default function themeButton(theme) {
     purpleText: { color: colors.white },
     purpleOutline: { borderColor: colors.purple, backgroundColor: colors.white },
     purpleOutlineText: { color: colors.purple },
+    btnXs: { width: 80, paddingVertical: 4, },
+    btnSm: { width: width / 5 },
+    btnMd: { width: width / 4 },
+    btnLg: { width: width / 3 },
+    btnXl: { width: width / 2 },
   }
 }

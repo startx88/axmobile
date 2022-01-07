@@ -29,9 +29,10 @@ const AppTheme = (theme) => {
   return StyleSheet.create({
     screen: { flex: 1 },
     screenCenter: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+    divider: { borderBottomWidth: 1, borderBottomColor: global.colors.grayLight, marginVertical: 10 },
     input: {
       backgroundColor: global.colors.background,
-      borderColor: global.colors.borderDarken, width: '100%',
+      borderColor: global.colors.borderDarken,
       padding: 8, borderStyle: 'solid', borderWidth: 1,
       borderRadius: 4, elevation: 1
     },

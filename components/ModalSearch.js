@@ -1,11 +1,12 @@
 import { forwardRef, useImperativeHandle, useRef } from 'react'
 import { useTheme } from '@react-navigation/native'
-import { StyleSheet, Modal as RNModal, ScrollView, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+import { StyleSheet, Modal as RNModal, ScrollView, Keyboard, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import useToggle from '../hooks/useToggle'
 import Button from './Button'
 import Icon from './Icon'
 import Input from './Input'
 import Typography from './Typography'
+import Divider from './Divider'
 
 /**
  * Modal
@@ -21,7 +22,7 @@ const ModalSearch = forwardRef((props, ref) => {
 
   // theme
   const theme = useTheme();
-  const modalRef = useRef()
+  const modalRef = useRef();
 
   // use ref
   useImperativeHandle(ref, () => ({ onOpen, onClose, onToggle }))
@@ -30,30 +31,32 @@ const ModalSearch = forwardRef((props, ref) => {
     <RNModal
       visible={open}
       onRequestClose={onClose}
-      animationType="slide"
+      animationType="fade"
       onSwipe={onClose}
       propagateSwipe={true}
       ref={modalRef}
     >
-      <View style={{ padding: 15, flex: 1, zIndex: 2 }}>
-        <View style={{ marginBottom: 20 }}>
-          <Input
-            iconEnd="search-outline"
-            value={value}
-            name={name}
-            onChange={onChange}
-            placeholder="Search keyword..."
-            onSubmitEditing={onSearch} />
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <View style={{ padding: 15, flex: 1, zIndex: 2 }}>
+          <View style={{ marginBottom: 0 }}>
+            <Input
+              iconEnd="search-outline"
+              value={value}
+              name={name}
+              onChange={onChange}
+              placeholder="Search keyword... and press enter"
+              onSubmitEditing={onSearch}
+            />
+          </View>
+          <Divider />
+          <View style={{ flex: 1 }}>
+            {children}
+          </View>
+          <Divider />
+          <View style={{ alignItems: 'flex-end' }}>
+            <Button size="xs" color="primary" onPress={onClose}>Close</Button>
+          </View>
         </View>
-        <View style={{ flex: 1 }}>
-          {children}
-        </View>
-        <View>
-          <Button color="primary" onPress={onClose}>Close</Button>
-        </View>
-      </View>
-      <TouchableWithoutFeedback onPress={onClose}>
-        <View style={{ position: 'absolute', zIndex: 1, width: '100%', height: '100%', backgroundColor: theme.colors.black, opacity: 0.5 }}></View>
       </TouchableWithoutFeedback>
     </RNModal>
   )
