@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet, useWindowDimensions } from "react-native"
-import { DefaultTheme } from '@react-navigation/native'
+import * as ScreenOrientation from 'expo-screen-orientation';
 import themeButton from "./Button"
 import Typography from "./Typography"
 import { Color } from "./Color"
@@ -46,15 +46,19 @@ const AppTheme = (theme) => {
     modalContainer: {
       backgroundColor: 'white',
       width: width - 20,
-      borderRadius: 5,
+      borderRadius: 8,
       margin: 'auto',
       padding: 15,
       elevation: 5,
       position: 'relative',
-      zIndex: 2
+      zIndex: 2,
+      borderColor: global.colors.borderDarken,
+      borderWidth: 1,
+      borderStyle: 'solid'
     },
     modalContent: {
-      maxHeight: height * 0.7,
+      maxHeight: height * 0.5,
+      overflow: 'scroll'
     },
     modalTitle: { marginBottom: 15, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderBottomColor: global.colors.border, borderBottomWidth: 1, paddingVertical: 10 },
     ...Typography(global),
