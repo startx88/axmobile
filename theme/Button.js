@@ -8,6 +8,7 @@ export default function themeButton(theme) {
 
 	return {
 		btnGroup: {flexDirection: 'row', width: '100%', alignItems: 'center'},
+		rounded: {borderRadius: 50},
 		btn: {
 			paddingHorizontal: 12,
 			paddingVertical: 6,
@@ -15,7 +16,8 @@ export default function themeButton(theme) {
 			borderStyle: 'solid',
 			borderWidth: 2,
 			alignItems: 'center',
-			borderRadius: 4,
+			borderRadius: 5,
+			shadowColor: colors.border,
 			shadowOffset: {width: 5, height: 4},
 			shadowOpacity: 0.3,
 			shadowRadius: 5,

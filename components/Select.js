@@ -15,6 +15,7 @@ const Select = ({data, name, label, value, onChange, renderProps, ...rest}) => {
 	const onSelectHandler = (option) => {
 		onChange(option);
 		setSelectOption(option);
+		setOpen(false);
 	};
 
 	const renderOptions = ({item}) => (
