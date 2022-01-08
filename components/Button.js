@@ -8,8 +8,16 @@ import upperFirst from 'lodash/upperFirst';
  * @param {*} param0
  * @returns
  */
-export default function Button({children, color, size, onPress, ...rest}) {
+export default function Button({
+	children,
+	block,
+	color,
+	size,
+	onPress,
+	...rest
+}) {
 	const theme = useTheme();
+
 	return (
 		<TouchableOpacity
 			activeOpacity={0.5}
@@ -18,6 +26,7 @@ export default function Button({children, color, size, onPress, ...rest}) {
 				theme.btn,
 				theme[camelCase(color)],
 				theme['btn' + upperFirst(size)],
+				block && {width: '100%'},
 			]}>
 			<Text style={[theme.btnText, theme[camelCase(color) + 'Text']]}>
 				{children}

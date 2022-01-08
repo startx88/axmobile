@@ -5,7 +5,7 @@ import {enableFreeze} from 'react-native-screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {useFonts} from 'expo-font';
 import AppNavigation from './navigation';
-import Loading from './screens/Loading';
+import Splash from './screens/Splash';
 
 enableFreeze(true);
 
@@ -41,10 +41,8 @@ export default function App() {
 	}
 
 	if (loading) {
-		return <Loading />;
+		return <Splash />;
 	}
-
-	console.log('Loading', loading);
 
 	return (
 		<SafeAreaProvider>

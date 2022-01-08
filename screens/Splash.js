@@ -1,92 +1,31 @@
+import React from 'react';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {useTheme} from '@react-navigation/native';
-import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import Button from '../components/Button';
-import ButtonGroup from '../components/ButtonGroup';
-import Input from '../components/Input';
-import Icon from '../components/Icon';
-import Modal from '../components/Modal';
-import useToggle from '../hooks/useToggle';
-import BottomSheet from '../components/BottomSheet';
-import useToggleRef from '../hooks/useToggleRef';
-import Select from '../components/Select';
-import {ROLE_ARRAY} from '../utility';
-import DropDownPicker from 'react-native-dropdown-picker';
+import {View, Text, Image, ScrollView} from 'react-native';
+import {AppImage} from '../utility';
+import Fade from '../components/Fade';
+
 /**
- * Onboarding screen
+ * Loading screen
  * @returns
  */
-export default function Splash() {
-	const [value, setValue] = useState(null);
+const Loading = () => {
 	const theme = useTheme();
-	//const { open, onToggle, onClose } = useToggle();
-	const {refs: sModalRef, onToggle: sToggle} = useToggleRef();
-	const {refs: modalRef, onToggle} = useToggleRef();
 
 	return (
-		<SafeAreaView style={[theme.screenCenter, {padding: 15}]}>
-			<Text>OnBoarding</Text>
-			<ButtonGroup>
-				<Button color="text">Button</Button>
-				<Button color="primary">Button</Button>
-				<Button color="primary-outline">Button</Button>
-			</ButtonGroup>
-
-			<ButtonGroup>
-				<Button onPress={onToggle} color="secondary">
-					Button
-				</Button>
-				<Button onPress={sToggle} color="secondary-outline">
-					Button
-				</Button>
-			</ButtonGroup>
-
-			<Input
-				onChange={() => {}}
-				name="name"
-				value="Hello"
-				iconEnd="search-outline"
-			/>
-			<Modal title="Modal" ref={modalRef}>
-				<Text>
-					Cumque euismod viverra quae arcu velit sapiente mus eaque tortor
-					accusamus assumenda malesuada penatibus molestiae libero nostrud
-					aspernatur. Quasi, dapibus magna imperdiet tristique posuere.
-					Voluptatibus! Minus sagittis debitis! Integer hymenaeos, eget officia
-					vestibulum euismod lacus? Dolorem? Curabitur quibusdam sagittis?
-					Phasellus temporibus fames, accusamus platea! Justo curae. Nostrud
-					deleniti, nobis eum iusto aliqua repudiandae aptent fuga arcu et,
-					nostrum commodo facilis, facilisis exercitationem tellus vehicula
-					sociis feugiat corporis ultrices pretium blanditiis provident mi
-					sollicitudin exercitation netus ligula felis egestas, ipsam possimus
-					cum tincidunt possimus aperiam amet bibendum in, facilisis sociis
-					tenetur. Amet sociis ullamcorper laboris exercitationem debitis
-					repudiandae, sapien praesentium sapiente. Cumque euismod viverra quae
-					arcu velit sapiente mus eaque tortor accusamus assumenda malesuada
-					penatibus molestiae libero nostrud aspernatur. Quasi, dapibus magna
-					imperdiet tristique posuere. Voluptatibus! Minus sagittis debitis!
-					Integer hymenaeos, eget officia vestibulum euismod lacus? Dolorem?
-					Curabitur quibusdam sagittis? Phasellus temporibus fames, accusamus
-					platea! Justo curae. Nostrud deleniti, nobis eum iusto aliqua
-					repudiandae aptent fuga arcu et, nostrum commodo facilis, facilisis
-					exercitationem tellus vehicula sociis feugiat corporis ultrices
-					pretium blanditiis provident mi sollicitudin exercitation netus ligula
-					felis egestas, ipsam possimus cum tincidunt possimus aperiam amet
-					bibendum in, facilisis sociis tenetur. Amet sociis ullamcorper laboris
-					exercitationem debitis repudiandae, sapien praesentium sapiente.
-				</Text>
-			</Modal>
-			<Text>{JSON.stringify(value)}</Text>
-			<Select
-				label="title"
-				value={value}
-				onChange={(value) => {
-					setValue(value);
-				}}
-				data={ROLE_ARRAY}></Select>
-		</SafeAreaView>
+		<SafeAreaProvider>
+			<ScrollView
+				contentContainerStyle={{
+					flex: 1,
+					alignItems: 'center',
+					justifyContent: 'center',
+				}}>
+				<Fade>
+					<Image source={AppImage.logo} />
+				</Fade>
+			</ScrollView>
+		</SafeAreaProvider>
 	);
-}
+};
 
-const styles = StyleSheet.create({});
+export default Loading;

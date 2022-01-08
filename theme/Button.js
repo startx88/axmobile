@@ -23,19 +23,27 @@ export default function themeButton(theme) {
 			shadowRadius: 5,
 			elevation: 2,
 		},
-		btnText: {
+		text: {
+			borderColor: 'transparent',
+			shadowColor: 'transparent',
 			fontFamily: 'RobotoMedium',
 			fontWeight: '500',
 			fontSize: 14,
+			elevation: 0,
 		},
-		text: {elevation: 0},
 		primary: {backgroundColor: colors.primary, borderColor: colors.primary},
 		primaryText: {color: colors.white},
 		primaryOutline: {
 			borderColor: colors.primary,
 			backgroundColor: colors.white,
 		},
-		primaryOutlineText: {color: colors.primary},
+		primaryOutlineText: {
+			color: colors.primary,
+			fontFamily: 'RobotoMedium',
+			fontWeight: '500',
+			fontSize: 12,
+			textTransform: 'uppercase',
+		},
 		secondary: {
 			backgroundColor: colors.secondary,
 			borderColor: colors.secondary,

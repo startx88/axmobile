@@ -1,4 +1,4 @@
-import { AppImage } from './ImageSource';
+import {AppImage} from './ImageSource';
 export const Slides = [
 	{
 		id: 1,
@@ -8,17 +8,17 @@ export const Slides = [
 		image: AppImage.home1,
 	},
 	{
-		id: 1,
-		title: 'Love your data.',
+		id: 2,
+		title: 'Keep databases running smoothly.',
 		description:
-			'Transform your business with the power of data, analytics, and cloud.',
+			'Deliver continuous operational excellence to transformation projects—at any scale—for any database technology.',
 		image: AppImage.home2,
 	},
 	{
-		id: 1,
-		title: 'Love your data.',
+		id: 3,
+		title: 'Are you analytics-ready?',
 		description:
-			'Transform your business with the power of data, analytics, and cloud.',
+			'In the journey to success, knowing where you are is half the battle. ',
 		image: AppImage.home3,
 	},
 ];

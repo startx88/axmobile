@@ -1,6 +1,7 @@
 export * from './constants/AppConstant';
 export * from './constants/ImageSource';
 export * from './constants/RouteConstant';
+export * from './constants/SplashData';
 
 export const STATUS_VALUES = {
 	ACTIVE: 'active',
